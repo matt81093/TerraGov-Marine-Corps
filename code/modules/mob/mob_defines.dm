@@ -35,7 +35,7 @@
 	var/next_click	= 0
 	var/next_move = 0
 	var/next_move_slowdown = 0	// Amount added during the next movement_delay(), then is reset.
-	var/next_move_adjust = 0 //Amount to adjust action/click delays by, + or -
+	var/next_move_adjust = 0 // Amount to adjust action/click delays by, + or -
 	var/next_move_modifier = 1 //Value to multiply action/click delays by
 	var/last_move_intent
 	var/area/lastarea
@@ -44,22 +44,21 @@
 	var/inertia_dir = 0
 	var/move_on_shuttle = TRUE // Can move on the shuttle.
 	var/canmove = TRUE
-	///Mob's angle in BYOND degrees. 0 is north (up/standing for humans), 90 and 270 are east and west respectively (lying horizontally), and 90 is south (upside-down).
-	var/lying_angle = 0
+	var/lying_angle = 0 // Mob's angle in BYOND degrees. 0 is north (up/standing for humans), 90 and 270 are east and west respectively (lying horizontally), and 90 is south (upside-down).
 	var/lying_prev = 0
 
-	//Security
+	// Security
 	var/computer_id
 	var/ip_address
 	var/list/logging = list()
 	var/static/next_mob_id = 0
 	var/immune_to_ssd = FALSE
 
-	//HUD and overlays
+	// HUD and overlays
 	var/hud_type = /datum/hud
 	var/datum/hud/hud_used
-	var/list/progressbars //for stacking do_after bars
-	var/list/progbar_towers //for stacking the total pixel height of the aboves.
+	var/list/progressbars // for stacking do_after bars
+	var/list/progbar_towers // for stacking the total pixel height of the aboves.
 	var/list/fullscreens = list()
 	var/list/alerts = list() // contains /obj/screen/alert only, used by alerts.dm
 	var/list/datum/action/actions = list()
@@ -67,8 +66,8 @@
 	var/lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
 	var/image/typing_indicator
 
-	//Interaction
-	///Lazylist assoc list of do_after and do_mob actions the mob is currently performing: list([target] = amount)
+	// Interaction
+	/// Lazylist assoc list of do_after and do_mob actions the mob is currently performing: list([target] = amount)
 	var/list/do_actions
 	var/datum/click_intercept
 	var/atom/movable/interactee //the thing that the mob is currently interacting with (e.g. a computer, another mob (stripping a mob), manning a hmg)
